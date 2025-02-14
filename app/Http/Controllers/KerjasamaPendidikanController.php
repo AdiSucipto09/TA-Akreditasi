@@ -62,4 +62,12 @@ class KerjasamaPendidikanController extends Controller
 
         return redirect()->back()->with('success', 'Data Visi & Misi berhasil diubah!');
     }
+
+    public function destroy($id)
+    {
+        $kerjasama_pendidikan = KerjasamaPendidikan::find($id);
+        $kerjasama_pendidikan->delete();
+
+        return redirect()->back()->with('success', 'Data Visi & Misi berhasil dihapus!');
+    }
 }

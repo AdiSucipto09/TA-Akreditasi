@@ -52,4 +52,12 @@ class KerjasamaPenelitianController extends Controller
 
         return redirect()->back()->with('success', 'Data Visi & Misi berhasil diubah!');
     }
+    
+    public function destroy($id)
+    {
+        $kerjasama_penelitian = KerjasamaPenelitian::find($id);
+        $kerjasama_penelitian->delete();
+
+        return redirect()->back()->with('success', 'Data Visi & Misi berhasil dihapus!');
+    }
 }

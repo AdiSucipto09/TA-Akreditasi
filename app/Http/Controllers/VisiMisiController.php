@@ -56,4 +56,13 @@ class VisiMisiController extends Controller
 
         return redirect()->back()->with('success', 'Data Visi & Misi berhasil diubah!');
     }
+
+    
+    public function destroy($id)
+    {
+        $visi_misi = VisiMisi::find($id);
+        $visi_misi->delete();
+
+        return redirect()->back()->with('success', 'Data Visi & Misi berhasil dihapus!');
+    }
 }

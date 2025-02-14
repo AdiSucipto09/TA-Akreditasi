@@ -52,4 +52,12 @@ class KerjasamaPengabdianKepadaMasyarakatController extends Controller
 
         return redirect()->back()->with('success', 'Data Visi & Misi berhasil diubah!');
     }
+
+    public function destroy($id)
+    {
+        $kerjasama_pengabdian_kepada_masyarakat = KerjasamaPengabdianKepadaMasyarakat::find($id);
+        $kerjasama_pengabdian_kepada_masyarakat->delete();
+
+        return redirect()->back()->with('success', 'Data Visi & Misi berhasil dihapus!');
+    }
 }
